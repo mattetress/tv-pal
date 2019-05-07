@@ -11,6 +11,7 @@ class SessionsController < ApiController
   end
 
   def destroy
+    user = User.find_by_auth_token!(request.headers[:token])
     user.invalidate_token
     head :ok
   end 
