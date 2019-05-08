@@ -28,23 +28,21 @@ export default class RegistrationForm extends Component {
         <Form onSubmit={event => this.props.handleSubmit(event, this.state)} >
           <Form.Group>
             <Form.Label>Email address</Form.Label>
-            <Form.Control name="email" type="email" onChange={this.handleChange} placeholder="Enter email" value={this.state.email} />
+            <Form.Control required name="email" type="email" onChange={this.handleChange} placeholder="Enter email" value={this.state.email} />
           </Form.Group>
 
           <Form.Group>
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password" />
+            <Form.Control required type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password" />
           </Form.Group>
 
           <Form.Group>
             <Form.Label>Confirm Password</Form.Label>
-            <Form.Control type="password" name="password_confirmation" onChange={this.handleChange} value={this.state.password_confirmation} placeholder="Re-enter password" />
+            <Form.Control required type="password" name="password_confirmation" onChange={this.handleChange} value={this.state.password_confirmation} placeholder="Re-enter password" />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
-            Submit
-        </Button>
-        </Form>;
+          <Form.Control className="btn btn-primary" type="submit" />
+        </Form>
       </>
     )
   }

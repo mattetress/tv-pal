@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import RegistrationForm from '../components/RegistrationForm'
 import { connect } from 'react-redux';
-import { authenticateUser } from '../actions/users'
-import Auth from '../modules/Auth'
+import { authenticateUser, displayError, dismissErrors } from '../actions/users'
+import Alert from 'react-bootstrap/Alert'
 
 class RegistrationContainer extends Component {
 
@@ -17,13 +17,28 @@ class RegistrationContainer extends Component {
       }
     }).then(res => res.json())
       .then(res => {
-        this.props.registrationDone(res);
+        if (res.errors) {
+          this.props.displayErrors(res)
+        } else {
+          this.props.registrationDone(res);
+        }
       })
+  }
+
+  renderErrors() {
+    return (
+      <div>
+        {this.props.errors.map((error, index) => {
+          return <Alert dismissible key={index} variant="danger" >{error}</Alert>
+        })}
+      </div>
+    )
   }
 
   render() {
     return (
       <div>
+        {this.renderErrors()}
         <Container>
           <RegistrationForm handleSubmit={this.handleSubmit} />
         </Container>
@@ -34,8 +49,16 @@ class RegistrationContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    registrationDone: response => dispatch(authenticateUser(response))
+    registrationDone: response => dispatch(authenticateUser(response)),
+    displayErrors: response => dispatch(displayError(response)),
+    dismissErrors: () => dispatch(dismissErrors())
   }
 }
 
-export default connect(null, mapDispatchToProps)(RegistrationContainer);
+const mapStateToProps = state => {
+  return {
+    errors: state.user.errors
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationContainer);
