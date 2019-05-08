@@ -17,7 +17,6 @@ class RegistrationContainer extends Component {
       }
     }).then(res => res.json())
       .then(res => {
-        Auth.authenticateToken(res);
         this.props.registrationDone(res);
       })
   }
