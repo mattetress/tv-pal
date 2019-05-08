@@ -1,7 +1,9 @@
 import Auth from '../modules/Auth';
 
 const initialState = {
-  auth: Auth.authenticationStatus()
+  auth: Auth.authenticationStatus(),
+  errors: []
+
 }
 
 const userReducer = function (state = initialState, action) {
@@ -14,6 +16,22 @@ const userReducer = function (state = initialState, action) {
         ...state,
         auth: Auth.authenticationStatus()
       }
+
+    case "ADD_ERROR":
+      console.log(action);
+
+      return {
+        ...state,
+        errors: action.payload.errors
+      }
+
+    case "DISMISS_ERRORS":
+
+      return {
+        ...state,
+        errors: []
+      }
+
 
     default:
       return state;

@@ -5,3 +5,16 @@ export function authenticateUser(response) {
     payload: response
   }
 }
+
+export function displayError(response) {
+  return {
+    type: "ADD_ERROR",
+    payload: response
+  }
+}
+
+export function dismissErrors() {
+  return {
+    type: "DISMISS_ERRORS"
+  }
+}
