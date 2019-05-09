@@ -6,7 +6,7 @@ class SessionsController < ApiController
       regenerate_token(user)
       send_token(user)
     else
-      render_unauthorized("error with your login or password")
+      render_unauthorized("There was a problem logging you in. Check your email and password.")
     end
   end
 
