@@ -3,6 +3,12 @@ const initialState = {
   popular: {
     page: 1,
     shows: []
+  },
+  shows: [],
+  show: {
+    showInfo: {},
+    networks: [],
+    creators: []
   }
 }
 
@@ -25,6 +31,26 @@ const showReducer = (state = initialState, action) => {
           currentPage: action.currentPage,
           totalPages: action.totalPages,
           shows: action.shows
+        }
+      }
+
+    case "LOADING_SHOW":
+
+      return {
+        ...state,
+        loading: true
+      }
+
+    case "DISPLAY_SHOW":
+
+      return {
+        ...state,
+        loading: false,
+        show: {
+          showInfo: action.showInfo,
+          networks: action.showInfo.networks,
+          creators: action.showInfo.created_by,
+          year: action.showInfo.first_air_date.split("-")[0]
         }
       }
 
