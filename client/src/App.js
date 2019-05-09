@@ -20,7 +20,7 @@ class App extends Component {
           <Route exact path="/shows/favorites" />
           <Route exact path="/shows/airing_today" component={AiringToday} />
           <Route exact path="/shows/popular" component={PopularContainer} />
-          <Route exact path="/shows/:id" component={ShowContainer} />
+          <Route exact path="/shows/:id" render={props => <ShowContainer {...props} key={props.match.params.id} />} />
         </Switch>
       </Router>
     )
