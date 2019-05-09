@@ -20,8 +20,8 @@ class ShowMain extends Component {
   render() {
     return (
       <>
-        <Card className="bg-dark text-white">
-          <Card.Img src={`https://image.tmdb.org/t/p/w1280${this.props.show.backdrop_path}`} alt="Card image" />
+        <Card className="bg-dark text-white overflow-auto">
+          <Card.Img className="card-img" src={`https://image.tmdb.org/t/p/w1280${this.props.show.backdrop_path}`} alt="Card image" />
           <Card.ImgOverlay className="overlay">
             <div className="poster">
               <img src={`https://image.tmdb.org/t/p/w185${this.props.show.poster_path}`} />
