@@ -14,6 +14,20 @@ export function fetchPopular(page = 1) {
   }
 }
 
+export function fetchToday(page = 1) {
+  return dispatch => {
+    dispatch({ type: "LOADING_TODAY" });
+    return fetch(`https://api.themoviedb.org/3/tv/airing_today?api_key=${API_KEY}&language=en-US&page=${page}`)
+      .then(res => res.json())
+      .then(shows => dispatch({
+        type: "ADD_AIRING_TODAY",
+        currentPage: page,
+        totalPages: shows.total_pages,
+        shows: shows.results
+      }))
+  }
+}
+
 export function fetchShow(id) {
   return dispatch => {
     dispatch({ type: "LOADING_SHOW" });

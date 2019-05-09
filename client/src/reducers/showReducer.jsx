@@ -4,12 +4,16 @@ const initialState = {
     page: 1,
     shows: []
   },
-  shows: [],
   show: {
     showInfo: {},
     networks: [],
     creators: [],
     similar: []
+  },
+  today: {
+    shows: [],
+    currentPage: 1,
+    totalPages: null
   }
 }
 
@@ -68,6 +72,25 @@ const showReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         similar: action.shows.results
+      }
+
+    case 'LOADING_TODAY':
+
+      return {
+        ...state,
+        loading: true,
+      }
+
+    case 'ADD_AIRING_TODAY':
+
+      return {
+        ...state,
+        loading: false,
+        today: {
+          shows: action.shows,
+          currentPage: action.currentPage,
+          totalPages: action.totalPages
+        }
       }
 
     default:
