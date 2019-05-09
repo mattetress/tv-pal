@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import Row from 'react-bootstrap/Row';
 import { fetchPopular } from '../actions/shows';
 import { connect } from 'react-redux'
+import ShowList from '../components/ShowList'
+import Dashboard from './Dashboard'
+
 
 
 class PopularContainer extends Component {
@@ -12,14 +14,23 @@ class PopularContainer extends Component {
 
   render() {
     return (
-      <div className="inner">
-        <h3>Popular Shows</h3>
-        <Row>
-          shows
-        </Row>
-      </div>
+      <>
+        <Dashboard />
+        <div className="inner container overflow-auto">
+          <h3>Popular Shows</h3>
+          <ShowList shows={this.props.shows} />
+        </div>
+      </>
     )
   }
 }
 
-export default connect()(PopularContainer);
+const mapStateToProps = state => {
+  return {
+    shows: state.shows.popular.shows,
+    currentPage: state.shows.popular.currentPage,
+    totalPages: state.shows.popular.totalPages
+  }
+}
+
+export default connect(mapStateToProps)(PopularContainer);
