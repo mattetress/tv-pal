@@ -17,7 +17,7 @@ class PopularContainer extends Component {
       <>
         <Dashboard />
         <div className="inner container overflow-auto">
-          <h3>Popular Shows</h3>
+          <h1>Popular Shows</h1>
           <ShowList shows={this.props.shows} />
         </div>
       </>
