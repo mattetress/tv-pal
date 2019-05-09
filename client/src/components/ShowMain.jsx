@@ -45,25 +45,36 @@ class ShowMain extends Component {
         </Card>
         <div className="container mt-2">
           <div className="row">
-            <div className="col-3">
+            <div className="col-2">
               <h4>Networks</h4>
               {this.renderNetworks()}
             </div>
-            <div className="col-3">
+            <div className="col-2">
+              <h4>Original Name</h4>
+              {this.props.show.original_name}
+            </div>
+            <div className="col-2">
               <h4>First Aired</h4>
               {this.props.show.first_air_date}
             </div>
-            <div className="col-3">
+            <div className="col-2">
               <h4>Last Aired</h4>
               {this.props.show.last_air_date}
             </div>
-            <div className="col-3">
+            <div className="col-2">
               <h4>Status</h4>
               {this.props.show.status}
             </div>
+            <div className="col-">
+              <div className="mt-1">
+                <strong>Seasons: </strong>
+                {this.props.show.number_of_seasons}<br />
+                <strong>Episodes: </strong>
+                {this.props.show.number_of_episodes}
+              </div>
+            </div>
           </div>
         </div>
-
       </>
     )
   }
