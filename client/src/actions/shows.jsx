@@ -26,3 +26,15 @@ export function fetchShow(id) {
   }
 }
 
+export function fetchSimilar(id) {
+  return dispatch => {
+    dispatch({ type: "LOADING_SIMILAR" });
+    return fetch(`http://api.themoviedb.org/3/tv/${id}/similar?api_key=${API_KEY}`)
+      .then(res => res.json())
+      .then(shows => dispatch({
+        type: "DISPLAY_SIMILAR",
+        shows: shows
+      }))
+  }
+}
+

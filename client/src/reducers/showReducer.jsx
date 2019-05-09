@@ -8,7 +8,8 @@ const initialState = {
   show: {
     showInfo: {},
     networks: [],
-    creators: []
+    creators: [],
+    similar: []
   }
 }
 
@@ -52,6 +53,21 @@ const showReducer = (state = initialState, action) => {
           creators: action.showInfo.created_by,
           year: action.showInfo.first_air_date.split("-")[0]
         }
+      }
+
+    case "LOADING_SIMILAR":
+
+      return {
+        ...state,
+        loading: true
+      }
+
+    case 'DISPLAY_SIMILAR':
+
+      return {
+        ...state,
+        loading: false,
+        similar: action.shows.results
       }
 
     default:
