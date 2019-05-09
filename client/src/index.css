@@ -59,3 +59,11 @@ div.show-info {
 .center {
   text-align: center;
 }
+
+div#similar {
+  width: 100%;
+  height: 350px;
+  overflow: auto;
+  white-space: nowrap;
+}
+
