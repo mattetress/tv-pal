@@ -24,12 +24,12 @@ class LoginForm extends Component {
         <Form onSubmit={event => this.props.handleSubmit(event, this.state)} >
           <Form.Group>
             <Form.Label>Email address</Form.Label>
-            <Form.Control name="email" type="email" onChange={this.handleChange} placeholder="Enter email" value={this.state.email} required="true" />
+            <Form.Control name="email" type="email" onChange={this.handleChange} placeholder="Enter email" value={this.state.email} required />
           </Form.Group>
 
           <Form.Group>
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password" required="true" />
+            <Form.Control type="password" name="password" onChange={this.handleChange} value={this.state.password} placeholder="Password" required />
           </Form.Group>
 
           <Form.Control type="submit" className="btn btn-primary" value="Log In" />
