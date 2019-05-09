@@ -22,7 +22,8 @@ const showReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         popular: {
-          page: action.page,
+          currentPage: action.currentPage,
+          totalPages: action.totalPages,
           shows: action.shows
         }
       }
