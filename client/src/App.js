@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import RegistrationContainer from './containers/RegistrationContainer';
 import LoginContainer from './containers/LoginContainer';
 import Dashboard from './containers/Dashboard'
+import PopularContainer from './containers/PopularContainer';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
           <Route exact path="/signup" render={() => (this.props.auth) ? <Redirect to="/shows/favorites" /> : <RegistrationContainer />} />
           <Route exact path="/login" render={() => (this.props.auth) ? <Redirect to="/shows/favorites" /> : <LoginContainer />} />
           <Route path="/shows" render={() => (this.props.auth) ? <Dashboard /> : <Redirect to="/" />} />
+          <Route exact path="/shows/popular" render={() => <PopularContainer />} />
         </React.Fragment>
       </Router>
     )
