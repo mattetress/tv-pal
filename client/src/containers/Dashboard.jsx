@@ -5,10 +5,10 @@ import Nav from '../components/Nav'
 class Dashboard extends Component {
   render() {
     return (
-      <div>
+      <>
         <Header />
         <Nav />
-      </div>
+      </>
     )
   }
 }
