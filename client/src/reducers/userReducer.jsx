@@ -32,6 +32,15 @@ const userReducer = function (state = initialState, action) {
         errors: []
       }
 
+      case "END_SESSION":
+        Auth.deauthenticateUser();
+
+        return {
+          ...state,
+          auth: Auth.authenticationStatus()
+        }
+
+
 
     default:
       return state;
