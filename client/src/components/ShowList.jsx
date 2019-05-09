@@ -9,7 +9,7 @@ class ShowList extends Component {
       <React.Fragment>
         {this.props.shows.map((show, index) => {
           return (
-            <ShowCard key={index} show={show} />
+            <ShowCard classes={this.props.classes} key={index} show={show} />
           )
         })}
       </React.Fragment>
@@ -18,9 +18,9 @@ class ShowList extends Component {
 
   render() {
     return (
-      <div className="row">
+      <>
         {this.renderShows()}
-      </div>
+      </>
     )
   }
 }
