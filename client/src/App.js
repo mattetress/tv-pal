@@ -7,6 +7,7 @@ import LoginContainer from './containers/LoginContainer';
 import Dashboard from './containers/Dashboard'
 import PopularContainer from './containers/PopularContainer';
 import ShowContainer from './containers/ShowContainer';
+import AiringToday from './containers/AiringToday';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path="/signup" render={() => (this.props.auth) ? <Redirect to="/shows/favorites" /> : <RegistrationContainer />} />
           <Route exact path="/login" render={() => (this.props.auth) ? <Redirect to="/shows/favorites" /> : <LoginContainer />} />
           <Route exact path="/shows/favorites" />
+          <Route exact path="/shows/airing_today" component={AiringToday} />
           <Route exact path="/shows/popular" component={PopularContainer} />
           <Route exact path="/shows/:id" component={ShowContainer} />
         </Switch>
