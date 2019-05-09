@@ -5,10 +5,23 @@ export function fetchPopular(page = 1) {
     dispatch({ type: "LOADING_POPULAR" });
     return fetch(`http://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&page=${page}`)
       .then(res => res.json())
-      .then(res => dispatch({ 
+      .then(res => dispatch({
         type: "ADD_POPULAR_SHOWS",
-        page: res.page,
+        currentPage: res.page,
+        totalPages: res.total_pages,
         shows: res.results
+      }))
+  }
+}
+
+export function fetchShow(id) {
+  return dispatch => {
+    dispatch({ type: "LOADING_SHOW" });
+    return fetch(`http://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}`)
+      .then(res => res.json())
+      .then(show => dispatch({
+        type: "DISPLAY_SHOW",
+        showInfo: show
       }))
   }
 }
