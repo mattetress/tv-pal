@@ -16,7 +16,7 @@ class ShowContainer extends Component {
         <Dashboard />
         <div className="container inner">
           <div className="row">
-            <ShowMain />
+            <ShowMain networks={this.props.networks} year={this.props.year} creators={this.props.creators} show={this.props.show} />
           </div>
         </div>
       </>
@@ -24,4 +24,13 @@ class ShowContainer extends Component {
   }
 }
 
-export default connect()(ShowContainer);
+const mapStateToProps = state => {
+  return {
+    show: state.shows.show.showInfo,
+    networks: state.shows.show.networks,
+    creators: state.shows.show.creators,
+    year: state.shows.show.year
+  }
+}
+
+export default connect(mapStateToProps)(ShowContainer);
