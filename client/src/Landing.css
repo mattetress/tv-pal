@@ -1,0 +1,25 @@
+div.bg { 
+  background-image: url(./assets/images/pablo-garcia-saldana-27620-unsplash.jpg);
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+div.logo {
+  text-align: center;
+  margin-top: 15%;
+  padding: 70px;
+}
+
+footer {
+  background-color: #939D9C;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 0.7em;
+  text-align: center;
+  min-width: 20%;
+}
