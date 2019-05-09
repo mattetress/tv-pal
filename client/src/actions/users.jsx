@@ -18,3 +18,9 @@ export function dismissErrors() {
     type: "DISMISS_ERRORS"
   }
 }
+
+export function endSession() {
+  return {
+    type: "END_SESSION"
+  }
+}
