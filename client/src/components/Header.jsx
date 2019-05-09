@@ -25,10 +25,10 @@ class Header extends Component {
           <Navbar.Brand href="#home">
             <img
               alt=""
-              src=""
+              src="/television.png"
               width="32"
               height="32"
-              className="d-inline-block align-top"
+              className="d-inline-block align-top mr-2"
             />
             {'TV Pal'}
           </Navbar.Brand>
