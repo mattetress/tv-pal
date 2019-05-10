@@ -10,6 +10,24 @@ class UsersController < ApiController
     end
   end
 
+  def favorites
+    user = User.find_by_auth_token!(request.headers[:token])
+    render json: user.tv_shows
+  end 
+
+  def toggle_favorite 
+    show = TvShow.find_or_create_by(show_id: params[:id])
+    user = User.find_by_auth_token!(request.headers[:token])
+
+    if user.tv_shows.include?(show)
+      user.tv_shows.delete(show)
+    else 
+      user.tv_shows << show 
+    end 
+
+    render json: user.tv_shows
+  end
+
   def profile
     user = User.find_by_auth_token!(request.headers[:token])
     render json: user
