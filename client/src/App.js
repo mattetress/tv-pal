@@ -14,6 +14,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <Route path="/shows" render={()=> (this.props.auth) ? null : <Redirect to="/" />} />
         <Switch>
           <Route exact path="/" render={() => (this.props.auth) ? <Redirect to="/shows/popular" /> : <Landing />} />
           <Route exact path="/signup" render={() => (this.props.auth) ? <Redirect to="/shows/popular" /> : <RegistrationContainer />} />

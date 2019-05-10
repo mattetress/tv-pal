@@ -7,16 +7,7 @@ import { endSession } from '../actions/users'
 
 class Header extends Component {
 
-  handleClick = () => {
-    console.log("RETURN VALUE:", Auth.getToken())
-    fetch("/api/logout", {
-      method: "delete",
-      headers: {
-        'Content-Type': 'application/json',
-        'token': Auth.getToken()
-      }
-    }).then(() => this.props.logout());
-  }
+  handleClick = () => this.props.logout();
 
   render() {
     return (
