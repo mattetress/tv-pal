@@ -52,3 +52,16 @@ export function fetchSimilar(id) {
   }
 }
 
+export function fetchTopRated(page = 1) {
+  return dispatch => {
+    dispatch({ type: 'LOADING_TOP_RATED' });
+    return fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`)
+      .then(res => res.json())
+      .then(res => dispatch({
+        type: "DISPLAY_TOP_RATED",
+        response: res,
+        currentPage: page
+      }))
+  }
+}
+

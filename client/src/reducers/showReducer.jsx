@@ -14,6 +14,11 @@ const initialState = {
     shows: [],
     currentPage: 1,
     totalPages: null
+  },
+  topRated: {
+    shows: [],
+    currentPage: 1,
+    totalPages: null
   }
 }
 
@@ -91,6 +96,26 @@ const showReducer = (state = initialState, action) => {
           currentPage: action.currentPage,
           totalPages: action.totalPages
         }
+      }
+
+    case 'LOADING_TOP_RATED':
+
+      return {
+        ...state,
+        loading: true
+      }
+
+    case 'DISPLAY_TOP_RATED':
+
+      return {
+        ...state,
+        loading: false,
+        topRated: {
+          shows: action.response.results,
+          currentPage: action.currentPage,
+          totalPages: action.response.total_pages
+        }
+
       }
 
     default:
