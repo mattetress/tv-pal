@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_05_10_023942) do
 
   create_table "tv_shows", force: :cascade do |t|
     t.integer "show_id"
+    t.text "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

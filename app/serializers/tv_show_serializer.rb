@@ -1,3 +1,3 @@
 class TvShowSerializer < ActiveModel::Serializer
-  attributes :show_id
+  attributes :show_id, :data
 end
