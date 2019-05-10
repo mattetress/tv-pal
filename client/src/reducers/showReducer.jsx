@@ -20,6 +20,9 @@ const initialState = {
     currentPage: 1,
     totalPages: null
   },
+  search: {
+    results: []
+  },
   currentPage: 1,
   totalPages: null
 }
@@ -139,6 +142,23 @@ const showReducer = (state = initialState, action) => {
         ...state,
         currentPage: 1,
         totalPages: null
+      }
+
+    case "LOADING_SEARCH":
+      
+      return {
+        ...state,
+        loading: true
+      }
+
+      case "DISPLAY_SEARCH_RESULTS":
+
+      return {
+        ...state,
+        loading: false,
+        search: {
+          results: action.response.results
+        }
       }
 
 

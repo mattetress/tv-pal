@@ -83,3 +83,17 @@ export function resetPage(dispatch) {
     type: 'RESET_PAGE_NUMBER'
   });
 }
+
+export function submitSearch(query) {
+  return dispatch => {
+    dispatch({ type: "LOADING_SEARCH"});
+    return fetch(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${query}`)
+      .then(res => res.json())
+      .then(res => {
+        dispatch({
+          type: "DISPLAY_SEARCH_RESULTS",
+          response: res
+        })
+      })
+  }
+}
