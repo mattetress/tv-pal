@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Auth from '../modules/Auth'
 import { connect } from 'react-redux';
 import { endSession } from '../actions/users'
 
