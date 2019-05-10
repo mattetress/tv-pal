@@ -6,10 +6,7 @@ import { resetPage } from '../actions/shows';
 const Nav = () => {
   return (
     <Row className="menu bg-light">
-      <div className="col-12 mt-5">
-        <NavLink exact to="/shows/favorites" onClick={() => resetPage()} className="btn align-middle menu-link" activeClassName="btn-dark">My Shows</NavLink>
-      </div>
-      <div className="col-12">
+      <div className="col-12 mt-4">
         <NavLink exact to="/shows/popular" onClick={() => resetPage()} className="btn menu-link" activeClassName="btn-dark">Popular</NavLink>
       </div>
       <div className="col-12">
@@ -18,6 +15,10 @@ const Nav = () => {
       <div className="col-12">
         <NavLink exact to="/shows/airing_today" onClick={() => resetPage()} className="btn menu-link" activeClassName="btn-dark">Airing Today</NavLink>
       </div>
+      <div className="col-12">
+        <NavLink exact to="/shows/search" onClick={() => resetPage()} className="btn menu-link" activeClassName="btn-dark">Search</NavLink>
+      </div>
+
     </Row>
   )
 }
