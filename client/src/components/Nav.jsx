@@ -12,6 +12,9 @@ const Nav = () => {
         <NavLink exact to="/shows/popular" className="btn menu-link" activeClassName="btn-dark">Popular</NavLink>
       </div>
       <div className="col-12">
+        <NavLink exact to='/shows/top_rated' className='btn menu-link' activeClassName="btn-dark">Top Rated</NavLink>
+      </div>
+      <div className="col-12">
         <NavLink exact to="/shows/airing_today" className="btn menu-link" activeClassName="btn-dark">Airing Today</NavLink>
       </div>
       <div className="col-12">
