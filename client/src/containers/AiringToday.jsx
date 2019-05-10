@@ -31,7 +31,7 @@ const mapStateToProps = state => {
   return {
     shows: state.shows.today.shows,
     currentPage: state.shows.currentPage,
-    totalPages: state.props.totalPages
+    totalPages: state.shows.totalPages
   }
 }
 
