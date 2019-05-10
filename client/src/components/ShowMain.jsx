@@ -9,7 +9,7 @@ class ShowMain extends Component {
       <React.Fragment>
         {this.props.networks.map((network, index) => {
           return (
-            <img className="mr-2" src={`https://image.tmdb.org/t/p/w45${network.logo_path}`} key={index} />
+            <img alt="" className="mr-2" src={`https://image.tmdb.org/t/p/w45${network.logo_path}`} key={index} />
           )
         })}
       </React.Fragment>
@@ -24,7 +24,7 @@ class ShowMain extends Component {
           <Card.Img className="card-img" src={`https://image.tmdb.org/t/p/w1280${this.props.show.backdrop_path}`} alt="Card image" />
           <Card.ImgOverlay className="overlay">
             <div className="poster">
-              <img src={`https://image.tmdb.org/t/p/w185${this.props.show.poster_path}`} />
+              <img alt="" src={`https://image.tmdb.org/t/p/w185${this.props.show.poster_path}`} />
             </div>
             <div className="show-info">
               <Card.Title><h1>{this.props.show.name} {`(${this.props.year})`}</h1></Card.Title>

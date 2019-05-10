@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import Dashboard from './Dashboard';
 import ShowList from '../components/ShowList';
-import { fetchTopRated, resetPage } from '../actions/shows';
+import { fetchTopRated } from '../actions/shows';
 import { connect } from 'react-redux';
-import Button from 'react-bootstrap/Button';
 import PageControls from '../components/PageControls';
 
 class TopRated extends Component {

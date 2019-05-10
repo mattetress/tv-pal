@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Dashboard from './Dashboard';
-import { fetchToday, resetPage } from '../actions/shows';
+import { fetchToday } from '../actions/shows';
 import { connect } from 'react-redux';
 import ShowList from '../components/ShowList'
 import PageControls from '../components/PageControls';

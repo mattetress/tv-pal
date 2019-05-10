@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchPopular, resetPage } from '../actions/shows';
+import { fetchPopular } from '../actions/shows';
 import { connect } from 'react-redux'
 import ShowList from '../components/ShowList'
 import Dashboard from './Dashboard'

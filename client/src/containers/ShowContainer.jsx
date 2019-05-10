@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Dashboard from "./Dashboard";
 import ShowMain from '../components/ShowMain'
 import { connect } from 'react-redux';
-import { fetchShow, fetchSimilar, clearShow } from '../actions/shows';
+import { fetchShow, fetchSimilar } from '../actions/shows';
 import Similar from '../components/Similar'
 
 class ShowContainer extends Component {

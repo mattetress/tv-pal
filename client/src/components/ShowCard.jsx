@@ -6,7 +6,7 @@ const ShowCard = props => {
 
     <div className={`${props.classes} p-2`} >
       <Link key={props.show.id} to={`/shows/${props.show.id}`} >
-        <img src={`https://image.tmdb.org/t/p/w200${props.show.poster_path}`} />
+        <img alt="show poster" src={`https://image.tmdb.org/t/p/w200${props.show.poster_path}`} />
         <p>{props.show.name}</p>
       </Link>
     </div>
