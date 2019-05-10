@@ -52,7 +52,7 @@ export function fetchSimilar(id) {
   }
 }
 
-export function fetchTopRated(page = 1) {
+export function fetchTopRated(page) {
   return dispatch => {
     dispatch({ type: 'LOADING_TOP_RATED' });
     return fetch(`https://api.themoviedb.org/3/tv/top_rated?api_key=${API_KEY}&language=en-US&page=${page}`)
@@ -60,8 +60,26 @@ export function fetchTopRated(page = 1) {
       .then(res => dispatch({
         type: "DISPLAY_TOP_RATED",
         response: res,
-        currentPage: page
+        currentPage: page,
+        totalPages: res.total_pages
       }))
   }
 }
 
+export function nextPage(dispatch) {
+  dispatch({
+    type: "NEXT_PAGE"
+  })
+}
+
+export function previousPage(dispatch) {
+  dispatch({
+    type: "PREVIOUS_PAGE"
+  })
+}
+
+export function resetPage(dispatch) {
+  dispatch({
+    type: 'RESET_PAGE_NUMBER'
+  });
+}

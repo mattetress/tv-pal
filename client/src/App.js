@@ -19,9 +19,9 @@ class App extends Component {
           <Route exact path="/signup" render={() => (this.props.auth) ? <Redirect to="/shows/favorites" /> : <RegistrationContainer />} />
           <Route exact path="/login" render={() => (this.props.auth) ? <Redirect to="/shows/favorites" /> : <LoginContainer />} />
           <Route exact path="/shows/favorites" />
-          <Route exact path="/shows/top_rated" component={TopRated} />
-          <Route exact path="/shows/airing_today" component={AiringToday} />
-          <Route exact path="/shows/popular" component={PopularContainer} />
+          <Route exact path="/shows/top_rated" render={props => <TopRated {...props} key={this.props.currentPage} />} />
+          <Route exact path="/shows/airing_today" render={props => <AiringToday {...props} key={this.props.currentPage} />} />
+          <Route exact path="/shows/popular" render={props => <PopularContainer {...props} key={this.props.currentPage} />} />
           <Route exact path="/shows/:id" render={props => <ShowContainer {...props} key={props.match.params.id} />} />
         </Switch>
       </Router>
@@ -31,7 +31,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    auth: state.user.auth
+    auth: state.user.auth,
+    currentPage: state.shows.currentPage
   }
 }
 

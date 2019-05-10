@@ -19,7 +19,9 @@ const initialState = {
     shows: [],
     currentPage: 1,
     totalPages: null
-  }
+  },
+  currentPage: 1,
+  totalPages: null
 }
 
 const showReducer = (state = initialState, action) => {
@@ -38,10 +40,10 @@ const showReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         popular: {
-          currentPage: action.currentPage,
-          totalPages: action.totalPages,
           shows: action.shows
-        }
+        },
+        currentPage: action.currentPage,
+        totalPages: action.totalPages
       }
 
     case "LOADING_SHOW":
@@ -93,9 +95,9 @@ const showReducer = (state = initialState, action) => {
         loading: false,
         today: {
           shows: action.shows,
-          currentPage: action.currentPage,
-          totalPages: action.totalPages
-        }
+        },
+        currentPage: action.currentPage,
+        totalPages: action.totalPages
       }
 
     case 'LOADING_TOP_RATED':
@@ -112,11 +114,33 @@ const showReducer = (state = initialState, action) => {
         loading: false,
         topRated: {
           shows: action.response.results,
-          currentPage: action.currentPage,
-          totalPages: action.response.total_pages
-        }
-
+        },
+        currentPage: action.currentPage,
+        totalPages: action.response.total_pages
       }
+
+    case "NEXT_PAGE":
+
+      return {
+        ...state,
+        currentPage: state.currentPage + 1
+      }
+
+    case "PREVIOUS_PAGE":
+
+      return {
+        ...state,
+        currentPage: state.currentPage - 1
+      }
+
+    case "RESET_PAGE_NUMBER":
+
+      return {
+        ...state,
+        currentPage: 1,
+        totalPages: null
+      }
+
 
     default:
       return state;

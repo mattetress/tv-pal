@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Dashboard from './Dashboard';
-import { fetchToday } from '../actions/shows';
+import { fetchToday, resetPage } from '../actions/shows';
 import { connect } from 'react-redux';
 import ShowList from '../components/ShowList'
+import PageControls from '../components/PageControls';
 
 class AiringToday extends Component {
 
@@ -14,6 +15,7 @@ class AiringToday extends Component {
     return (
       <>
         <Dashboard />
+        <PageControls currentPage={this.props.currentPage} totalPages={this.props.totalPages} />
         <div className="inner container overflow-auto">
           <h1>Airing Today</h1>
           <div className="row">
@@ -27,7 +29,9 @@ class AiringToday extends Component {
 
 const mapStateToProps = state => {
   return {
-    shows: state.shows.today.shows
+    shows: state.shows.today.shows,
+    currentPage: state.shows.currentPage,
+    totalPages: state.props.totalPages
   }
 }
 

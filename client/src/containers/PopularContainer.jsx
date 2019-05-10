@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { fetchPopular } from '../actions/shows';
+import { fetchPopular, resetPage } from '../actions/shows';
 import { connect } from 'react-redux'
 import ShowList from '../components/ShowList'
 import Dashboard from './Dashboard'
+import PageControls from '../components/PageControls';
 
 
 
@@ -16,6 +17,7 @@ class PopularContainer extends Component {
     return (
       <>
         <Dashboard />
+        <PageControls currentPage={this.props.currentPage} totalPages={this.props.totalPages} />
         <div className="inner container overflow-auto">
           <h1>Popular Shows</h1>
           <div className="row">
@@ -30,8 +32,8 @@ class PopularContainer extends Component {
 const mapStateToProps = state => {
   return {
     shows: state.shows.popular.shows,
-    currentPage: state.shows.popular.currentPage,
-    totalPages: state.shows.popular.totalPages
+    currentPage: state.shows.currentPage,
+    totalPages: state.shows.totalPages
   }
 }
 

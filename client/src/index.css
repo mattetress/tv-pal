@@ -67,3 +67,9 @@ div#similar {
   white-space: nowrap;
 }
 
+div.page-controls {
+  position: absolute;
+  top: 72px;
+  right: 90px;
+  z-index: 1;
+}
