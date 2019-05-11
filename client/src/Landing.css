@@ -6,12 +6,17 @@ div.bg {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: -2;
 }
 
 div.logo {
   text-align: center;
   margin-top: 15%;
   padding: 70px;
+}
+
+div.logo h1 {
+  font-size: 5em;
 }
 
 footer {

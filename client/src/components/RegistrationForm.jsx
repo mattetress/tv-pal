@@ -26,11 +26,11 @@ export default class RegistrationForm extends Component {
         <Spring
           from={{
             opacity: 0,
-            marginTop: -500
+            marginTop: "40vh"
           }}
           to={{
             opacity: 1,
-            marginTop: 150
+            marginTop: "20vh"
           }} >
           {props => (
             <div style={props} className="form">
@@ -55,8 +55,8 @@ export default class RegistrationForm extends Component {
                 <Form.Control className="btn btn-primary" type="submit" />
               </Form>
             </div>)
-          } 
-          </Spring>
+          }
+        </Spring>
       </div>
     )
   }
