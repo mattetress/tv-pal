@@ -67,3 +67,11 @@ div#similar {
   white-space: nowrap;
 }
 
+div.form {
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 150px;
+  background-color: rgba(250, 250, 250, 0.75);
+  padding: 30px;
+  border-radius: 4%;
+}
