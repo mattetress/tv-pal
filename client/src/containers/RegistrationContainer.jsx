@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import RegistrationForm from '../components/RegistrationForm'
 import { connect } from 'react-redux';
 import { authenticateUser, displayError, dismissErrors } from '../actions/users'
-import Alert from 'react-bootstrap/Alert'
+import Alert from 'react-bootstrap/Alert';
 
 class RegistrationContainer extends Component {
 
@@ -27,9 +27,10 @@ class RegistrationContainer extends Component {
 
   renderErrors() {
     return (
+      
       <div>
         {this.props.errors.map((error, index) => {
-          return <Alert dismissible key={index} variant="danger" >{error}</Alert>
+          return <Alert onClick={this.props.dismissErrors} dismissible key={index} variant="danger" >{error}</Alert>
         })}
       </div>
     )
