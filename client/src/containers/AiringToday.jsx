@@ -8,18 +8,18 @@ import PageControls from '../components/PageControls';
 class AiringToday extends Component {
 
   componentDidMount() {
-    fetchToday()(this.props.dispatch)
+    fetchToday(this.props.currentPage)(this.props.dispatch)
   }
 
   render() {
     return (
       <>
         <Dashboard />
-        <PageControls currentPage={this.props.currentPage} totalPages={this.props.totalPages} />
         <div className="inner container overflow-auto">
           <h1>Airing Today</h1>
           <div className="row">
             <ShowList classes="card col-3" shows={this.props.shows} />
+            <PageControls currentPage={this.props.currentPage} totalPages={this.props.totalPages} />
           </div>
         </div>
       </>

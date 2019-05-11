@@ -10,18 +10,18 @@ import PageControls from '../components/PageControls';
 class PopularContainer extends Component {
 
   componentDidMount() {
-    fetchPopular()(this.props.dispatch);
+    fetchPopular(this.props.currentPage)(this.props.dispatch);
   }
 
   render() {
     return (
       <>
         <Dashboard />
-        <PageControls currentPage={this.props.currentPage} totalPages={this.props.totalPages} />
         <div className="inner container overflow-auto">
           <h1>Popular Shows</h1>
           <div className="row">
             <ShowList classes="col-3 card" shows={this.props.shows} />
+            <PageControls currentPage={this.props.currentPage} totalPages={this.props.totalPages} />
           </div>
         </div>
       </>
