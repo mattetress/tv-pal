@@ -1,6 +1,6 @@
 import userReducer from './userReducer';
 import showReducer from './showReducer';
-import { combineReducers } from '../../../../../Library/Caches/typescript/3.4.3/node_modules/redux';
+import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
   user: userReducer,
