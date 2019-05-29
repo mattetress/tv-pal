@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Landing from './components/Landing';
 import { connect } from 'react-redux';
 import RegistrationContainer from './containers/RegistrationContainer';
