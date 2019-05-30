@@ -18,7 +18,7 @@ class TopRated extends Component {
         <div className="container inner overflow-auto">
           <h1>Top Rated</h1>
           <div className="row">
-            <ShowList classes="col-3 card" shows={this.props.shows} />
+            <ShowList classes="col-m-3 card" shows={this.props.shows} />
             <PageControls currentPage={this.props.currentPage} totalPages={this.props.totalPages} nextPage={this.props.nextPage} previousPage={this.props.previousPage} />
           </div>
         </div>

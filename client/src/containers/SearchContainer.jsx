@@ -18,7 +18,7 @@ class SearchContainer extends Component {
         <div className="container inner overflow-auto">
           <SearchForm handleSubmit={this.handleSubmit} />
           <div className="row mt-5">
-          <ShowList classes="col-3 card" shows={this.props.shows} />
+          <ShowList classes="col-m-3 card" shows={this.props.shows} />
         </div>
         </div>
       </>

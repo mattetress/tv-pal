@@ -20,7 +20,7 @@ class PopularContainer extends Component {
         <div className="inner container overflow-auto">
           <h1>Popular Shows</h1>
           <div className="row">
-            <ShowList classes="col-3 card" shows={this.props.shows} />
+            <ShowList classes="col-m-3 card" shows={this.props.shows} />
             <PageControls currentPage={this.props.currentPage} totalPages={this.props.totalPages} />
           </div>
         </div>

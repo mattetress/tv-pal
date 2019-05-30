@@ -18,7 +18,7 @@ class AiringToday extends Component {
         <div className="inner container overflow-auto">
           <h1>Airing Today</h1>
           <div className="row">
-            <ShowList classes="card col-3" shows={this.props.shows} />
+            <ShowList classes="card col-m-3" shows={this.props.shows} />
             <PageControls currentPage={this.props.currentPage} totalPages={this.props.totalPages} />
           </div>
         </div>
