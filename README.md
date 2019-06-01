@@ -66,4 +66,4 @@ Please read [CONTRIBUTING.md](https://github.com/mattetress/tv-pal/blob/master/c
 
 * **Matt Etress** - *Initial work* - [mattetress](https://github.com/mattetress)
 
-See also the list of [contributors](https://github.com/mattetress/arthub-rails/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/mattetress/tv-pal/contributors) who participated in this project.
